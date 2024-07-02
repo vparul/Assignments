@@ -1,0 +1,9 @@
+{
+  "documents": [
+    { "type": "bank-draft", "title": "Bank Draft", "position": 0, "thumbnail": "https://plus.unsplash.com/premium_photo-1667030489905-d8e6309ebe0e?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { "type": "bill-of-lading", "title": "Bill of Lading", "position": 1, "thumbnail": "https://images.unsplash.com/photo-1697134065897-d262c9127bd6?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { "type": "invoice", "title": "Invoice", "position": 2, "thumbnail": "https://images.unsplash.com/photo-1633604781759-fdd6b9c79733?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { "type": "bank-draft-2", "title": "Bank Draft 2", "position": 3, "thumbnail": "https://images.unsplash.com/photo-1706710398127-182d369221d0?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { "type": "bill-of-lading-2", "title": "Bill of Lading 2", "position": 4, "thumbnail": "https://plus.unsplash.com/premium_photo-1664357541544-fb0e6bdc4dd9?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }
+  ]
+}
