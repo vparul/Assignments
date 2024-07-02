@@ -12,23 +12,23 @@ This React application manages data fetched from an API and stores them locally 
 
 To run this application locally with JSON Server, follow these steps:
 
-1. **Clone the Repository:**
-   git clone https://github.com/your/repository.git
-   cd repository-name
-
-2. **Install Dependencies:**
+1. **Install Dependencies:**
+   ```bash
    npm install
+   ```
 
-3. **Start JSON Server:**
+2. **Start JSON Server:**
    Ensure you have `json-server` installed globally:
+   ```bash
    npm install -g json-server
+   ```
 
    Start JSON Server with the provided `documents.json` file:
    json-server --watch documents.json --port 3001
 
    The JSON Server will start running on `http://localhost:3001`.
 
-4. **Start the Development Server for React App:**
+3. **Start the Development Server for React App:**
    Open a new terminal window/tab in the project directory.
 
    Start the React development server:
@@ -38,7 +38,7 @@ To run this application locally with JSON Server, follow these steps:
 
    The React application will start running on `http://localhost:3000`.
 
-5. **Open in Browser:**
+4. **Open in Browser:**
    Open your web browser and go to `http://localhost:3000` to view the application.
 
 ## Usage
