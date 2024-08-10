@@ -1,6 +1,0 @@
-[
-    { "id": "1", "name": "Home" },
-    { "id": "2", "name": "Registration", "component": "RegistrationForm" },
-    { "id": "3", "name": "Flow Diagram", "component": "FlowDiagram" }
-  ]
-  
