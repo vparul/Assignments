@@ -1,7 +1,7 @@
-// src/components/Menu/index.js
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadComponent, setState } from '../../redux/actions';
+
+import { loadComponent, setState } from '../../redux/appSlice';
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const Menu = () => {
   };
 
   return (
-    <div>
+    <>
       <h3>Menu</h3>
       <ul>
         {menu?.map((item, index) => (
@@ -22,7 +22,7 @@ const Menu = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 

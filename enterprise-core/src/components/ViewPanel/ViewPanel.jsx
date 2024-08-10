@@ -1,5 +1,5 @@
-// src/components/ViewPanel/index.js
 import React from 'react';
+
 import { useSelector } from 'react-redux';
 
 const componentMap = {
@@ -8,7 +8,7 @@ const componentMap = {
 };
 
 const ViewPanel = () => {
-  const loadedComponent = useSelector((state) => state.loadedComponent);
+  const loadedComponent = useSelector(({ app }) => app.loadedComponent);
 
   const ComponentToRender = loadedComponent ? componentMap[loadedComponent.version] : null;
 

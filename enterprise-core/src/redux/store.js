@@ -1,11 +1,11 @@
-// src/redux/store.js
-import { createStore, combineReducers } from 'redux';
-import appReducer from './reducers';
+// store.js
+import { configureStore } from '@reduxjs/toolkit';
+import appReducer from './appSlice';
 
-const rootReducer = combineReducers({
-  app: appReducer,
+const store = configureStore({
+  reducer: {
+    app: appReducer,
+  },
 });
-
-const store = createStore(rootReducer);
 
 export default store;
