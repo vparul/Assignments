@@ -1,11 +1,13 @@
-// src/redux/store.js
-import { createStore, combineReducers } from 'redux';
-import appReducer from './reducers';
+// src/redux/actions.js
+export const SET_CURRENT_APP = 'SET_CURRENT_APP';
+export const UPDATE_MENU = 'UPDATE_MENU';
 
-const rootReducer = combineReducers({
-  app: appReducer,
+export const setCurrentApp = (app) => ({
+  type: SET_CURRENT_APP,
+  payload: app,
 });
 
-const store = createStore(rootReducer);
-
-export default store;
+export const updateMenu = (menu) => ({
+  type: UPDATE_MENU,
+  payload: menu,
+});

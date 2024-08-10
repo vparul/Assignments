@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.tsx
+import React, { useEffect } from "react";
+import { Provider, useDispatch } from "react-redux";
+import store from "./redux/store";
+import Menu from "./components/Menu";
+import ViewPanel from "./components/ViewPanel";
+import { setCurrentApp, updateMenu } from "./redux/actions";
+import menuConfig from "./config/menuConfig.json";
+import appConfig from "./config/appConfig.json";
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const menu = menuConfig;
+    dispatch(updateMenu(menu));
+    dispatch(setCurrentApp(appConfig.initialApp));
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Menu />
+      <ViewPanel />
+    </Provider>
   );
-}
+};
 
-export default App;
+const WrappedApp = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+export default WrappedApp;
