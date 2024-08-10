@@ -1,36 +1,23 @@
-// src/components/ViewPanel.js
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { updateMenu } from '../../redux/actions';
-import appConfig from '../../config/appConfig.json';
+// src/components/ViewPanel/index.js
+import React from 'react';
+import { useSelector } from 'react-redux';
+
+const componentMap = {
+  v1: () => <div>Registration Form V1</div>,
+  v2: () => <div>Registration Form V2</div>,
+};
 
 const ViewPanel = () => {
-  const currentApp = useSelector((state) => state.app.currentApp);
-  const dispatch = useDispatch();
+  const loadedComponent = useSelector((state) => state.loadedComponent);
 
-  useEffect(() => {
-    if (currentApp) {
-      const appConfigData = appConfig[currentApp];
-      if (appConfigData) {
-        dispatch(updateMenu(appConfigData.menu));
-      }
-    }
-  }, [currentApp, dispatch]);
+  const ComponentToRender = loadedComponent ? componentMap[loadedComponent.version] : null;
 
-  const renderComponent = (appName) => {
-    console.log(appName)
-    if (!appName) return null;
-
-    const Component = React.lazy(() => import(`../${appName}`));
-    console.log(Component);
-    return (
-      <React.Suspense fallback={<div>Loading...</div>}>
-        <Component />
-      </React.Suspense>
-    );
-  };
-
-  return <div>{renderComponent(currentApp)}</div>;
+  return (
+    <div>
+      <h3>View Panel</h3>
+      {ComponentToRender ? <ComponentToRender /> : <div>Select a component from the menu.</div>}
+    </div>
+  );
 };
 
 export default ViewPanel;

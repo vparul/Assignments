@@ -1,19 +1,28 @@
-// src/redux/reducers.js
-import { SET_CURRENT_APP, UPDATE_MENU } from './actions';
+// src/redux/reducer.js
+import { LOAD_COMPONENT, SET_STATE, SET_MENU } from './actions';
 
 const initialState = {
-  currentApp: null,
+  loadedComponent: null,
+  data: {},
   menu: [],
 };
 
-const appReducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_CURRENT_APP:
+    case LOAD_COMPONENT:
       return {
         ...state,
-        currentApp: action.payload,
+        loadedComponent: action.payload,
       };
-    case UPDATE_MENU:
+    case SET_STATE:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          ...action.payload,
+        },
+      };
+    case SET_MENU:
       return {
         ...state,
         menu: action.payload,
@@ -23,4 +32,4 @@ const appReducer = (state = initialState, action) => {
   }
 };
 
-export default appReducer;
+export default reducer;

@@ -1,34 +1,28 @@
-// src/App.tsx
-import React, { useEffect } from "react";
-import { Provider, useDispatch } from "react-redux";
-import store from "./redux/store";
-import Menu from "./components/Menu";
-import ViewPanel from "./components/ViewPanel";
-import { setCurrentApp, updateMenu } from "./redux/actions";
-import menuConfig from "./config/menuConfig.json";
-import appConfig from "./config/appConfig.json";
+// src/App.js
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import componentConfig from './config/componentConfig.json'; // Configuration file
+import Menu from './components/Menu'; // Menu component
+import ViewPanel from './components/ViewPanel'; // View panel component
+import FlowDiagram from './components/FlowDiagram'; // Flow diagram component
+import { setMenu } from './redux/actions'; // Redux actions
 
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const menu = menuConfig;
-    dispatch(updateMenu(menu));
-    dispatch(setCurrentApp(appConfig.initialApp));
+    // Set the menu configuration in Redux store
+    dispatch(setMenu(componentConfig.menu));
   }, [dispatch]);
 
   return (
-    <Provider store={store}>
-      <Menu />
-      <ViewPanel />
-    </Provider>
+    <div>
+      <h1>Dynamic Component Loader</h1>
+      <Menu />          {/* Menu component */}
+      <ViewPanel />     {/* View panel component */}
+      <FlowDiagram />   {/* Flow diagram component */}
+    </div>
   );
 };
 
-const WrappedApp = () => (
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
-
-export default WrappedApp;
+export default App;

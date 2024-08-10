@@ -1,0 +1,25 @@
+{
+    "applications": [
+      {
+        "name": "RegistrationForm",
+        "version": "v1"
+      },
+      {
+        "name": "RegistrationForm",
+        "version": "v2"
+      }
+    ],
+    "menu": [
+      {
+        "label": "Registration Form V1",
+        "appName": "RegistrationForm",
+        "version": "v1"
+      },
+      {
+        "label": "Registration Form V2",
+        "appName": "RegistrationForm",
+        "version": "v2"
+      }
+    ]
+  }
+  
